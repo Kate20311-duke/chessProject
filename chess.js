@@ -28,7 +28,20 @@ const I18N = {
     aiThinking: '（电脑思考中…）',
     musicOn: '背景音乐 开',
     musicOff: '背景音乐 关',
-    musicVolume: '音量'
+    musicVolume: '音量',
+    musicTrack: '曲目',
+    trackSpring: '春',
+    trackSummer: '夏',
+    trackAutumn: '秋',
+    trackWinter: '冬',
+    themeBoard: '棋盘',
+    themePieces: '棋子',
+    boardRed: '红',
+    boardGreen: '绿',
+    boardBlue: '蓝',
+    boardYellow: '黄',
+    pieceSymbols: '符号',
+    pieceLetters: '字母'
   },
   en: {
     langLabel: 'Language',
@@ -54,7 +67,20 @@ const I18N = {
     aiThinking: ' (Thinking...)',
     musicOn: 'Music on',
     musicOff: 'Music off',
-    musicVolume: 'Volume'
+    musicVolume: 'Volume',
+    musicTrack: 'Track',
+    trackSpring: 'Spring',
+    trackSummer: 'Summer',
+    trackAutumn: 'Autumn',
+    trackWinter: 'Winter',
+    themeBoard: 'Board',
+    themePieces: 'Pieces',
+    boardRed: 'Red',
+    boardGreen: 'Green',
+    boardBlue: 'Blue',
+    boardYellow: 'Yellow',
+    pieceSymbols: 'Symbols',
+    pieceLetters: 'Letters'
   }
 };
 
@@ -156,7 +182,7 @@ class ChessGame {
         if (piece) {
           const color = getPieceColor(piece);
           const type = getPieceType(piece);
-          const symbol = PIECES[color][type];
+          const symbol = (typeof window.getPieceSymbol === 'function' ? window.getPieceSymbol(color, type) : PIECES[color][type]);
           sq.innerHTML = `<span class="piece">${symbol}</span>`;
         }
         boardEl.appendChild(sq);
@@ -387,7 +413,7 @@ class ChessGame {
       if (isCheck) sq.classList.add('check');
       if (piece) {
         const color = getPieceColor(piece);
-        const symbol = PIECES[color][getPieceType(piece)];
+        const symbol = (typeof window.getPieceSymbol === 'function' ? window.getPieceSymbol(color, getPieceType(piece)) : PIECES[color][getPieceType(piece)]);
         sq.innerHTML = `<span class="piece">${symbol}</span>`;
       } else sq.innerHTML = '';
     });

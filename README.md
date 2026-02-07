@@ -1,25 +1,25 @@
-# 国际象棋
+# Chess
 
-一个在浏览器中运行的国际象棋游戏，使用纯 HTML / CSS / JavaScript 实现。
+A browser-based chess game built with plain HTML, CSS, and JavaScript.
 
-## 功能
+## Features
 
-- **标准棋盘与棋子**：8×8 棋盘，王、后、车、象、马、兵，白方在下、黑方在上
-- **基本走法**：各棋子按国际象棋规则移动与吃子
-- **回合制**：白方先手，轮流下棋
-- **将军与将死**：检测将军状态，无合法走法时判将死并结束对局
-- **兵的升变**：兵到达底线自动升变为后
-- **不能送王**：不允许走后己方王被将军的走法
-- **重新开始**：可随时重置对局
+- **Standard board and pieces**: 8×8 board with King, Queen, Rook, Bishop, Knight, and Pawn; White at the bottom, Black at the top
+- **Legal moves**: All pieces move and capture according to standard chess rules
+- **Turn-based play**: White moves first, then players alternate
+- **Check and checkmate**: Detects check; game ends when there is no legal move (checkmate or stalemate)
+- **Pawn promotion**: Pawns promote to a Queen when reaching the opposite end
+- **No moving into check**: Moves that leave your own King in check are not allowed
+- **New game**: Restart the game at any time
 
-## 使用
+## How to play
 
-1. 用浏览器打开 `index.html`
-2. 点击己方棋子选中，再点击高亮的格子完成移动或吃子
-3. 点击「重新开始」开始新一局
+1. Open `index.html` in your browser
+2. Click a piece to select it, then click a highlighted square to move or capture
+3. Click "New Game" to start over
 
-## 文件
+## Files
 
-- `index.html` - 页面结构
-- `style.css` - 棋盘与界面样式
-- `chess.js` - 棋盘状态与走法逻辑
+- `index.html` — Page structure
+- `style.css` — Board and UI styles
+- `chess.js` — Board state and move logic
