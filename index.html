@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>国际象棋</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="lang-row">
+      <span data-i18n="langLabel">语言</span>
+      <select id="lang-select" aria-label="Language">
+        <option value="zh" selected>中文</option>
+        <option value="en">English</option>
+      </select>
+      <div id="audio-control"></div>
+    </div>
+    <h1 data-i18n="title">国际象棋</h1>
+    <div class="setup-panel">
+      <div class="setup-row">
+        <span data-i18n="modeLabel">模式：</span>
+        <label><input type="radio" name="mode" value="pvp" checked><span data-i18n="modePvp">双人对战</span></label>
+        <label><input type="radio" name="mode" value="ai"><span data-i18n="modeAi">人机对战</span></label>
+      </div>
+      <div class="setup-row ai-options" id="ai-options">
+        <span data-i18n="sideLabel">执棋：</span>
+        <label><input type="radio" name="side" value="white" checked><span data-i18n="sideWhite">白方（先手）</span></label>
+        <label><input type="radio" name="side" value="black"><span data-i18n="sideBlack">黑方（后手）</span></label>
+        <span class="setup-gap" data-i18n="difficultyLabel">难度：</span>
+        <label><input type="radio" name="difficulty" value="easy" checked><span data-i18n="diffEasy">简单</span></label>
+        <label><input type="radio" name="difficulty" value="medium"><span data-i18n="diffMedium">中等</span></label>
+        <label><input type="radio" name="difficulty" value="hard"><span data-i18n="diffHard">困难</span></label>
+      </div>
+    </div>
+    <div class="status-bar">
+      <span id="turn-indicator">白方回合</span>
+      <span id="game-status"></span>
+    </div>
+    <div id="chessboard"></div>
+    <div class="controls">
+      <button id="reset-btn" data-i18n="btnReset">重新开始</button>
+    </div>
+  </div>
+  <script src="chess.js"></script>
+  <script src="audio.js"></script>
+</body>
+</html>
